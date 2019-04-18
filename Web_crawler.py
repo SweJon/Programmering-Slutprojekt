@@ -13,14 +13,15 @@ def image_spider(max_pages): #funktion som tar upp bildernas url för att ladda 
         soup = BeautifulSoup(down_img, features="html.parser")
         for link in soup.findAll("img", {"class": "s-item__image-img"}):
             src = link.get("src")
-            print(src)
-        page += 4 #antalet sidor som ska läsas av
+        page += 1 #antalet sidor som ska läsas av
 
 
-def download_web_image(adr): #funktion som laddar ner bilder
+#funktion som laddar ner bilder
     name = random.randrange(1, 1000)
     full_name = str(name) + ".jpg"
-    urllib.request.urlretrieve(adr, full_name)
+    full_name.write(urllib.request.urlopen(src).read())
+    full_name.close()
 
-download_web_image("http://teespring-storecontent.s3.amazonaws.com/oH48W9OolEiG3_iE40F0tw_store_banner_image?1478560026161")
+
+
 
