@@ -16,9 +16,10 @@ def image_spider(max_pages): #funktion som tar upp bildernas url för att ladda 
         page += 1 #antalet sidor som ska läsas av
 
 
-#funktion som laddar ner bilder
+    #funktion som laddar ner bilder
     name = random.randrange(1, 1000)
     full_name = str(name) + ".jpg"
+    print(src)
     full_name.write(urllib.request.urlopen(src).read())
     full_name.close()
 
